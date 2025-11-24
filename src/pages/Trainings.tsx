@@ -39,7 +39,10 @@ function Trainings() {
             headerName: 'Customer',
             width: 200,
             valueGetter: (value: any) => {
-                return `${value.firstname} ${value.lastname}`;
+                if (value && value.firstname && value.lastname) {
+                    return `${value.firstname} ${value.lastname}`;
+                }
+                return 'N/A';
             }
         },
         {
