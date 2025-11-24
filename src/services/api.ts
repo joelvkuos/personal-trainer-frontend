@@ -1,4 +1,4 @@
-import { Customer, CustomerResponse, Training } from '../types';
+import type { Customer, CustomerResponse, Training } from '../types';
 
 const API_URL = 'https://customer-rest-service-frontend-personaltrainer.2.rahtiapp.fi/api';
 
