@@ -6,6 +6,11 @@ export interface Customer {
     city: string;
     email: string;
     phone: string;
+    _links?: {
+        self: { href: string };
+        customer?: { href: string };
+        trainings?: { href: string };
+    }
 }
 
 export interface Training {
