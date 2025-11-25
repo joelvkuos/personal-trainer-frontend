@@ -5,6 +5,7 @@ function Navbar() {
         <nav>
             <Link to="/">Customers</Link>
             <Link to="/trainings">Trainings</Link>
+            <Link to="/calendar">Calendar</Link>
         </nav>
     )
 }
