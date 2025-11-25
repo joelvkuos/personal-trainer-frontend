@@ -54,6 +54,37 @@ function Customers() {
         }
     };
 
+    const handleExportCSV = () => {
+        const headers = ['Firstname', 'Lastname', 'Email', 'Phone', 'Street Address', 'Postcode', 'City'];
+
+        const rows = customers.map(customer => [
+            customer.firstname,
+            customer.lastname,
+            customer.email,
+            customer.phone,
+            customer.streetaddress,
+            customer.postcode,
+            customer.city,
+        ]);
+
+        const csvContent = [
+            headers.join(','),
+            ...rows.map(row => row.join(','))
+        ].join('\n');
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'customers.csv');
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+
     const columns = [
         { field: 'firstname', headerName: 'First Name', width: 150 },
         { field: 'lastname', headerName: 'Last Name', width: 150 },
@@ -77,6 +108,9 @@ function Customers() {
             <h1>Customers</h1>
             <Button variant="contained" onClick={handleAddClick} style={{ marginBottom: '1rem' }}>
                 Add Customer
+            </Button>
+            <Button variant='outlined' onClick={handleExportCSV} style={{ marginBottom: '1rem', marginLeft: '0.5rem' }}>
+                Export CSV
             </Button>
             <DataGrid
                 rows={customers}
