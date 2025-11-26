@@ -67,7 +67,7 @@ function CalendarPage() {
             .catch(error => console.error('Error fetching trainings:', error));
     }, []);
     return (
-        <div style={{ height: '80vh', padding: '1rem' }}>
+        <div style={{ height: '80vh', padding: '1rem', color: '#D1F0FD' }}>
             <h1>Training Calendar</h1>
             <Calendar
                 localizer={localizer}

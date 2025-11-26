@@ -104,18 +104,58 @@ function Customers() {
     ];
 
     return (
-        <div>
+        <div style={{ color: '#D1F0FD' }}>
             <h1>Customers</h1>
-            <Button variant="contained" onClick={handleAddClick} style={{ marginBottom: '1rem' }}>
+            <Button
+                variant="outlined"
+                onClick={handleAddClick}
+                sx={{
+                    marginBottom: '1rem',
+                    color: '#D1F0FD',
+                    borderColor: '#D1F0FD',
+                    '&:hover': {
+                        borderColor: '#D1F0FD',
+                        backgroundColor: 'rgba(209, 240, 253, 0.1)'
+                    }
+                }}
+            >
                 Add Customer
             </Button>
-            <Button variant='outlined' onClick={handleExportCSV} style={{ marginBottom: '1rem', marginLeft: '0.5rem' }}>
+            <Button
+                variant='outlined'
+                onClick={handleExportCSV}
+                sx={{
+                    marginBottom: '1rem',
+                    marginLeft: '0.5rem',
+                    color: '#D1F0FD',
+                    borderColor: '#D1F0FD',
+                    '&:hover': {
+                        borderColor: '#D1F0FD',
+                        backgroundColor: 'rgba(209, 240, 253, 0.1)'
+                    }
+                }}
+            >
                 Export CSV
             </Button>
             <DataGrid
                 rows={customers}
                 columns={columns}
                 getRowId={(row) => row._links?.self.href || row.email}
+                sx={{
+                    backgroundColor: '#fff',
+                    '& .MuiDataGrid-columnHeaders': {
+                        backgroundColor: '#8B8680',
+                        color: '#D1F0FD',
+                        fontSize: '16px',
+                        fontWeight: 'bold'
+                    },
+                    '& .MuiDataGrid-cell': {
+                        borderBottom: '1px solid #8B8680'
+                    },
+                    '& .MuiDataGrid-row:hover': {
+                        backgroundColor: 'rgba(209, 240, 253, 0.1)'
+                    }
+                }}
             />
             <CustomerDialog
                 open={dialogOpen}

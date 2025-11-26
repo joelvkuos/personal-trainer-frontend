@@ -26,18 +26,21 @@ function Statistics() {
     }, []);
 
     return (
-        <div style={{ padding: '1rem' }}>
+        <div style={{ padding: '1rem', color: '#D1F0FD' }}>
             <h1>Training Statistics</h1>
             <p>Total duration by activity (minutes)</p>
 
             <ResponsiveContainer width="100%" height={400}>
-                <BarChart data={chartData}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="activity" />
-                    <YAxis label={{ value: 'Duration (min)', angle: -90, position: 'insideLeft' }} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="duration" fill="#8884d8" />
+                <BarChart data={chartData} style={{ backgroundColor: 'white', borderRadius: '8px', padding: '1rem' }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#8B8680" />
+                    <XAxis dataKey="activity" stroke="#67645E" />
+                    <YAxis label={{ value: 'Duration (min)', angle: -90, position: 'insideLeft' }} stroke="#67645E" />
+                    <Tooltip
+                        contentStyle={{ backgroundColor: '#67645E', border: '1px solid #D1F0FD', color: '#D1F0FD' }}
+                        labelStyle={{ color: '#D1F0FD' }}
+                    />
+                    <Legend wrapperStyle={{ color: '#67645E' }} />
+                    <Bar dataKey="duration" fill="#8B8680" />
                 </BarChart>
             </ResponsiveContainer>
         </div>
