@@ -115,7 +115,7 @@ function Customers() {
             <DataGrid
                 rows={customers}
                 columns={columns}
-                getRowId={(row) => row.email}
+                getRowId={(row) => row._links?.self.href || row.email}
             />
             <CustomerDialog
                 open={dialogOpen}
