@@ -3,69 +3,18 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
-        <AppBar position="static" sx={{ backgroundColor: '#67645E' }}>
+        <AppBar position="static">
             <Toolbar>
-                <Button
-                    variant="outlined"
-                    sx={{
-                        color: '#D1F0FD',
-                        borderColor: '#D1F0FD',
-                        '&:hover': {
-                            borderColor: '#D1F0FD',
-                            backgroundColor: 'rgba(209, 240, 253, 0.1)'
-                        }
-                    }}
-                    component={Link}
-                    to="/"
-                >
+                <Button color="inherit" component={Link} to="/">
                     Customers
                 </Button>
-                <Button
-                    variant="outlined"
-                    sx={{
-                        color: '#D1F0FD',
-                        borderColor: '#D1F0FD',
-                        marginLeft: '1rem',
-                        '&:hover': {
-                            borderColor: '#D1F0FD',
-                            backgroundColor: 'rgba(209, 240, 253, 0.1)'
-                        }
-                    }}
-                    component={Link}
-                    to="/trainings"
-                >
+                <Button color="inherit" component={Link} to="/trainings">
                     Trainings
                 </Button>
-                <Button
-                    variant="outlined"
-                    sx={{
-                        color: '#D1F0FD',
-                        borderColor: '#D1F0FD',
-                        marginLeft: '1rem',
-                        '&:hover': {
-                            borderColor: '#D1F0FD',
-                            backgroundColor: 'rgba(209, 240, 253, 0.1)'
-                        }
-                    }}
-                    component={Link}
-                    to="/calendar"
-                >
+                <Button color="inherit" component={Link} to="/calendar">
                     Calendar
                 </Button>
-                <Button
-                    variant="outlined"
-                    sx={{
-                        color: '#D1F0FD',
-                        borderColor: '#D1F0FD',
-                        marginLeft: '1rem',
-                        '&:hover': {
-                            borderColor: '#D1F0FD',
-                            backgroundColor: 'rgba(209, 240, 253, 0.1)'
-                        }
-                    }}
-                    component={Link}
-                    to="/statistics"
-                >
+                <Button color="inherit" component={Link} to="/statistics">
                     Statistics
                 </Button>
             </Toolbar>
