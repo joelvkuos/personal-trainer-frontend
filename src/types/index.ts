@@ -25,4 +25,6 @@ export interface CustomerResponse {
     _embedded: {
         customers: Customer[];
     }
+
 }
+
